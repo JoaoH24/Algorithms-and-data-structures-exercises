@@ -1,13 +1,13 @@
-number = int(input("Ingrese un número: "))
-h = 0
+numero_ingresado = int(input("Ingrese un número: "))
 
 
-def math_funt(n, h):
-    if n == 0:
-        return 1
-    if n >= 1:
-        h += 1 / n
-        return h + math_funt(n - 1, h)
+def calcular_serie(n, contador=1):
+    if contador > n:
+        return 0
+    else:
+        termino_actual = 1 / contador
+        return termino_actual + calcular_serie(n, contador + 1)
 
 
-print(math_funt(number, h))
+resultado = calcular_serie(numero_ingresado)
+print(resultado)
